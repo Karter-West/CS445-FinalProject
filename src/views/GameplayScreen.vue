@@ -1,6 +1,7 @@
 <script setup>
 import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
+import Card from 'primevue/card';
 
 const router = useRouter();
 const toTitleScreen = () => {router.push('/')}
@@ -8,15 +9,123 @@ const toTitleScreen = () => {router.push('/')}
 
 <template>
     <main>
-        <div>
-            <h1>Gameplay Page</h1>
+        <div class="firstTextWrapper">
+            <div class="gameTitleContainer">
+                <h1>Game Title</h1>
+            </div>
+            <div class="authorContainer">
+                <h2>Made by: Author</h2>
+            </div>
+            <div class="descriptContainer">
+                <h2>
+                    Game Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                </h2>
+            </div>
         </div>
-
+        
+        <div class="logoContainer">
+            <Card class = "custom-card">
+                <template #content>
+                    <h2>logo here</h2>
+                </template>
+            </Card>
+        </div>
+        
+        <div class="gameplayContainer">
+            <Card class = "custom-card2">
+                <template #content>
+                    <h2>game play goes here</h2>
+                </template>
+            </Card>
+        </div>
+        <div class="startContainer">
+            <h2>Press any button to start.</h2>
+        </div>
+        
+        
         <div>
-            <Button 
+            <Button class = "button"
             label="To Title Screen"
             @click="toTitleScreen"
             />
         </div>
     </main>
 </template>
+
+<style scoped>
+    .firstTextWrapper {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-width: 1200px;
+    }
+
+    .custom-card {
+        position: absolute;
+        top: 50px;
+        right: 50px;
+        width: 300px;
+        height: 200px;
+        background-color: #ffffff24; 
+        border: 2px solid #F9ED69;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .custom-card2 {
+        width: 800px;
+        height: 400px;
+        background-color: #ffffff20;
+        border: 2px solid #F9ED69;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 200px;
+    }
+
+    .gameTitleContainer h1{
+        font-size: 300%;
+        color: #F9ED69;
+        margin-bottom: -20px;
+    }
+    .authorContainer h2{
+        font-size: 175%;
+        color: #F9ED69;
+        margin-bottom: 40px;
+    }
+    .logoContainer h2{
+        font-size: 150%;
+        border: red;
+    }
+    .gameplayContainer h2{
+        border: red;
+        font-size: 150%;
+    }
+    .descriptContainer h2{
+        font-size: 150%;
+        color: #F08A5D;
+        text-align: left;
+    }
+    .startContainer h2{
+        text-align: center;
+        font-size: 175%;
+        color: #F9ED69;
+        margin-top: 100px;
+    }
+
+    .button {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+    }
+
+</style>
