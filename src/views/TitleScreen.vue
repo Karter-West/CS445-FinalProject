@@ -7,9 +7,10 @@ const toGamesScreen = () => {router.push('/games')}
 </script>
 
 <template>
-    <main>
+    <main class="title-screen">
         <div>
-            <h1>Title Page</h1>
+            <h1 class="title">Indy Indies</h1>
+            <h2>Press Any Key To Start</h2>
         </div>
 
         <div>
@@ -22,3 +23,12 @@ const toGamesScreen = () => {router.push('/games')}
 
 
 </template>
+
+<style scoped>
+
+.title{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 100px;
+    margin: auto;
+}
+</style>

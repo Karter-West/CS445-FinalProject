@@ -13,7 +13,9 @@ const toGameplay = () => {router.push('/gameplay')}
         <div>
             <h1>Games Page</h1>
         </div>
-
+        <div>
+            <Wheel />
+        </div>
         <div>
             <Button 
             label="To Title Screen"
@@ -24,10 +26,6 @@ const toGameplay = () => {router.push('/gameplay')}
             label="To Gameplay"
             @click="toGameplay"
             />
-        </div>
-
-        <div>
-            <Wheel />
         </div>
     </main>
 </template>

@@ -82,6 +82,8 @@
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
+    background-color: rgba(92, 194, 139, 0.873);
+    color: white;
   }
 
   #mahWheel {
