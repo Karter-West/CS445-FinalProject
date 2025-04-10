@@ -1,6 +1,7 @@
 <script setup>
 import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
+import Wheel from './Wheel.vue';
 
 const router = useRouter();
 const toTitleScreen = () => {router.push('/')}
@@ -23,6 +24,10 @@ const toGameplay = () => {router.push('/gameplay')}
             label="To Gameplay"
             @click="toGameplay"
             />
+        </div>
+
+        <div>
+            <Wheel />
         </div>
     </main>
 </template>

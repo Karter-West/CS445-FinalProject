@@ -12,9 +12,8 @@
     name: "FortuneWheel",
     data() {
       return {
-        segments: ["Game 1", "Game 2", "Game 3", "Prize 4", "Prize 5", "Prize 6"],
-        colors: ["#FF5733", "#33FF57", "#3357FF", "#FF33A1", "#A133FF", "#33FFF5"],
-        currentAngle: 0,
+        segments: ["Game 1", "Game 2", "Game 3", "Game 4", "Game 5", "Game 6"],
+        currentAngle: 30,
       };
     },
     mounted() {
@@ -87,6 +86,6 @@
 
   #mahWheel {
     position: relative;
-    right: -100%;
+    left: -120%;
   }
   </style>

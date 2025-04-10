@@ -7,8 +7,6 @@ import Wheel from './views/Wheel.vue';
   <div>
     <RouterView />
   </div>
-
-  <div><Wheel/></div>
 </template>
 
 <style scoped>
