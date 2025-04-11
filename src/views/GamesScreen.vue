@@ -33,8 +33,9 @@ const toGameplay = () => {router.push('/gameplay')}
 <style scoped>
 
 .mahWheel{
-    position: relative;
-    left: -55%;
+    position: absolute;
+    left: -20vh;
+    top: 32vh;
 }
 
 .main{
