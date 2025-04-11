@@ -62,15 +62,15 @@ const toTitleScreen = () => {router.push('/')}
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        max-width: 1200px;
+        max-width: 100vw;
     }
 
     .custom-card {
         position: absolute;
         top: 50px;
         right: 50px;
-        width: 300px;
-        height: 200px;
+        width: 30vw;
+        height: 20vh;
         background-color: #ffffff24; 
         border: 2px solid #F9ED69;
         color: white;
@@ -80,8 +80,8 @@ const toTitleScreen = () => {router.push('/')}
     }
 
     .custom-card2 {
-        width: 800px;
-        height: 400px;
+        width: 80vw;
+        height: 40vh;
         background-color: #ffffff20;
         border: 2px solid #F9ED69;
         color: white;
@@ -93,14 +93,14 @@ const toTitleScreen = () => {router.push('/')}
     }
 
     .gameTitleContainer h1{
-        font-size: 300%;
+        font-size: 2.5rem;
         color: #F9ED69;
         margin-bottom: -20px;
     }
     .authorContainer h2{
-        font-size: 175%;
+        font-size: 1.25rem;
         color: #F9ED69;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
     .logoContainer h2{
         font-size: 150%;
@@ -111,7 +111,8 @@ const toTitleScreen = () => {router.push('/')}
         font-size: 150%;
     }
     .descriptContainer h2{
-        font-size: 150%;
+        width: 40vw;
+        font-size: .5rem;
         color: #F08A5D;
         text-align: left;
     }
