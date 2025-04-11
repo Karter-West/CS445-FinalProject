@@ -9,7 +9,7 @@ const toGameplay = () => {router.push('/gameplay')}
 </script>
 
 <template>
-    <main>
+    <main class="main">
         <div>
             <h1>Games Page</h1>
         </div>
@@ -35,6 +35,11 @@ const toGameplay = () => {router.push('/gameplay')}
 .mahWheel{
     position: relative;
     left: -130%;
+}
+
+.main{
+    width: 100vw;
+    height: 100vh;
 }
 
 </style>
