@@ -1,6 +1,6 @@
 <template>
     <div class="fortune-wheel">
-      <canvas ref="wheelCanvas" width="500" height="500" id="mahWheel"></canvas>
+      <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
       <button @click="spinWheel">Spin the Wheel!</button>
     </div>
   </template>
@@ -86,8 +86,4 @@
     color: white;
   }
 
-  #mahWheel {
-    position: relative;
-    left: -120%;
-  }
   </style>

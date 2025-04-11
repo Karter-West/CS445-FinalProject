@@ -14,7 +14,7 @@ const toGameplay = () => {router.push('/gameplay')}
             <h1>Games Page</h1>
         </div>
         <div>
-            <Wheel />
+            <Wheel class="mahWheel"/>
         </div>
         <div>
             <Button 
@@ -29,3 +29,12 @@ const toGameplay = () => {router.push('/gameplay')}
         </div>
     </main>
 </template>
+
+<style scoped>
+
+.mahWheel{
+    position: relative;
+    left: -130%;
+}
+
+</style>
