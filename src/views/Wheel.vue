@@ -1,7 +1,9 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
-      <button @click="spinWheel">Spin the Wheel!</button>
+      <button @click="spinWheel" :disabled="isAnimating">
+        Spin the Wheel!
+      </button>
     </div>
   </template>
   
@@ -14,6 +16,7 @@
       return {
         segments: ["Game 1", "Game 2", "Game 3", "Game 4", "Game 5", "Game 6"],
         currentAngle: 30,
+        isAnimating: false,
       };
     },
     mounted() {
@@ -42,13 +45,20 @@
         }
       },
       spinWheel() {
+        if (this.isAnimating) return;
+        
+        this.isAnimating = true;
+
         const spins = 1;
         const finalAngle = spins * 60;
         gsap.to(this, {
           currentAngle: this.currentAngle + finalAngle,
           duration: 1,
           ease: "power4.out",
-          onUpdate: this.updateWheel
+          onUpdate: this.updateWheel,
+          onComplete: () => {
+            this.isAnimating = false;
+          },
         });
       },
       updateWheel() {
