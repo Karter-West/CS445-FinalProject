@@ -11,7 +11,7 @@ const toGameplay = () => {router.push('/gameplay')}
 <template>
     <main>
         <div>
-            <h1>Games Page</h1>
+            <h1 class="title">Games Page</h1>
         </div>
         <div class="main">
             <Wheel class="mahWheel"/>
@@ -22,7 +22,7 @@ const toGameplay = () => {router.push('/gameplay')}
             @click="toTitleScreen"
             />
 
-            <Button 
+            <Button style="margin-left: 15px;" 
             label="To Gameplay"
             @click="toGameplay"
             />
@@ -34,12 +34,18 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .mahWheel{
     position: absolute;
-    left: -20vh;
-    top: 32vh;
+    left: -25vh;
+    top: 9vh;
 }
 
 .main{
     width: 100vw;
+}
+
+.title{
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 7vh;
+    margin: -40vh 20vw 0 20vw;
 }
 
 </style>
