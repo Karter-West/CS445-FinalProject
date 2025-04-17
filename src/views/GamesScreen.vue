@@ -109,7 +109,8 @@ onBeforeUnmount(() => {
 .header {
     font-size: 200%;
     text-align: center;
-    padding-bottom: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
     font-family: 'Press Start 2P', sans-serif;
 }
 
