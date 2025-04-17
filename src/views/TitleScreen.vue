@@ -1,9 +1,25 @@
 <script setup>
 import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
+import { onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
 const toGamesScreen = () => {router.push('/games')}
+
+function toNextScreen(event){
+    if (event.code === 'Space' && router.currentRoute.value.path === '/'){
+        toGamesScreen();
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('keyup', toNextScreen)
+})
+
+onBeforeUnmount(() => {
+    document.removeEventListener('keyup', toNextScreen);
+});
+
 </script>
 
 <template>

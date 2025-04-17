@@ -3,10 +3,30 @@ import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
 import Wheel from './Wheel.vue';
 import Card from 'primevue/card';
+import { onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
 const toTitleScreen = () => {router.push('/')}
 const toGameplay = () => {router.push('/gameplay')}
+
+function keyHandler(event){
+    if (event.code === 'Space' && router.currentRoute.value.path === '/games'){
+        toGameplay();
+    }
+
+    if (event.code === 'ArrowLeft' && router.currentRoute.value.path === '/games'){
+        toTitleScreen();
+    }
+}
+
+onMounted(() => {
+    document.addEventListener('keyup', keyHandler)
+})
+
+onBeforeUnmount(() => {
+    document.addEventListener('keyup', keyHandler)
+})
+
 </script>
 
 <template>
@@ -36,17 +56,7 @@ const toGameplay = () => {router.push('/gameplay')}
                 </div>
             </template>
         </Card>
-        <div>
-            <Button 
-            label="To Title Screen"
-            @click="toTitleScreen"
-            />
-
-            <Button style="margin-left: 15px;" 
-            label="To Gameplay"
-            @click="toGameplay"
-            />
-        </div>
+        
     </main>
 </template>
 
@@ -54,7 +64,7 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .mahWheel{
     position: absolute;
-    left: -25vh;
+    left: -40vh;
     top: 9vh;
 }
 

@@ -58,7 +58,7 @@
           onUpdate: this.updateWheel,
           onComplete: () => {
             this.isAnimating = false;
-          },
+          }
         });
       },
       updateWheel() {
@@ -80,6 +80,8 @@
       },
     },
   };
+
+
   </script>
   
   <style scoped>
