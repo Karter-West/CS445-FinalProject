@@ -1,6 +1,7 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
+      
     </div>
   </template>
   

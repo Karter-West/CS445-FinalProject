@@ -78,7 +78,7 @@ onBeforeUnmount(() => {
 
 .mahWheel{
     position: absolute;
-    left: -40vh;
+    left: -30vh;
     top: 9vh;
 }
 
