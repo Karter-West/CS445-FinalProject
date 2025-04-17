@@ -1,6 +1,7 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
+      <i class="pi pi-sort-down-fill"></i>
     </div>
   </template>
   
@@ -102,7 +103,6 @@
   <style scoped>
   .fortune-wheel {
     display: flex;
-    flex-direction: column;
     align-items: center;
   }
   button {
@@ -115,5 +115,14 @@
   .wheelButton{
     margin-left: 30vh;
   }
+
+  .pi-sort-down-fill {
+    font-size: 50px;
+    color: #F08A5D;
+    margin-left: 0vh;
+    cursor: pointer;
+    rotate: 90deg;
+  }
+
 
   </style>

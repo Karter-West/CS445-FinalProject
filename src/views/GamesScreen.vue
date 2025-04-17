@@ -51,7 +51,7 @@ onBeforeUnmount(() => {
         <div class="main">
             <Wheel class="mahWheel" ref="wheelRef"/>
         </div>
-        <Card class = "card" style="width: 25rem; overflow: hidden">
+        <Card class = "card" style="width: 40rem; overflow: hidden">
             <template #header>
                 <div class = "header"> gameplay </div>
             </template>
@@ -97,7 +97,7 @@ onBeforeUnmount(() => {
 .card {
     font-size: 100%;
     align-items: center;
-    margin: 0 0 15vh 40vw;
+    margin: 0 0 15vh 30vw;
     background-color: #ffffff24; 
     border: 2px solid #F9ED69;
     color: white;
