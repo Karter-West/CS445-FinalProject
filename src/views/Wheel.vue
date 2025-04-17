@@ -1,9 +1,12 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
+<<<<<<< HEAD
       <button class="wheelButton" @click="spinWheel" :disabled="isAnimating">
         Spin the Wheel!
       </button>
+=======
+>>>>>>> 387b123704fae134584d967e0eed4a0c21e7b33e
     </div>
   </template>
   
@@ -21,6 +24,7 @@
     },
     mounted() {
       this.drawWheel();
+
     },
     methods: {
       drawWheel() {
@@ -58,7 +62,24 @@
           onUpdate: this.updateWheel,
           onComplete: () => {
             this.isAnimating = false;
-          },
+          }
+        });
+      },
+      revSpinWheel() {
+        if (this.isAnimating) return;
+        
+        this.isAnimating = true;
+
+        const spins = 1;
+        const finalAngle = spins * 60;
+        gsap.to(this, {
+          currentAngle: this.currentAngle - finalAngle,
+          duration: 1,
+          ease: "power4.out",
+          onUpdate: this.updateWheel,
+          onComplete: () => {
+            this.isAnimating = false;
+          }
         });
       },
       updateWheel() {
@@ -80,6 +101,8 @@
       },
     },
   };
+
+
   </script>
   
   <style scoped>

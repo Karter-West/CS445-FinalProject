@@ -2,10 +2,45 @@
 import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
 import Wheel from './Wheel.vue';
+import Card from 'primevue/card';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
 const toTitleScreen = () => {router.push('/')}
 const toGameplay = () => {router.push('/gameplay')}
+const wheelRef = ref(null)
+
+function keyHandler(event){
+    const currentPath = router.currentRoute.value.path
+
+    if (currentPath === '/games'){
+        if (event.code == 'ArrowDown'){
+            wheelRef.value?.spinWheel();
+        }
+
+        if (event.code == 'ArrowUp'){
+            wheelRef.value?.revSpinWheel();
+        }
+
+        if (event.code === 'Space' ){
+            toGameplay();
+        }
+
+        if (event.code === 'ArrowLeft' ){
+            toTitleScreen();
+        }
+    }
+
+}
+
+onMounted(() => {
+    document.addEventListener('keyup', keyHandler)
+})
+
+onBeforeUnmount(() => {
+    document.addEventListener('keyup', keyHandler)
+})
+
 </script>
 
 <template>
@@ -14,19 +49,28 @@ const toGameplay = () => {router.push('/gameplay')}
             <h1 class="title">Games Page</h1>
         </div>
         <div class="main">
-            <Wheel class="mahWheel"/>
+            <Wheel class="mahWheel" ref="wheelRef"/>
         </div>
-        <div>
-            <Button 
-            label="To Title Screen"
-            @click="toTitleScreen"
-            />
-
-            <Button style="margin-left: 15px;" 
-            label="To Gameplay"
-            @click="toGameplay"
-            />
-        </div>
+        <Card class = "card" style="width: 25rem; overflow: hidden">
+            <template #header>
+                <div class = "header"> gameplay </div>
+            </template>
+            <template #title>Game Title</template>
+            <template #subtitle>Author: Jane Doe</template>
+            <template #content>
+                <p class="m-0">
+                    Game description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+                    quas!
+                </p>
+            </template>
+            <template #footer>
+                <div class="flex gap-4 mt-1">
+                    <Button label="2 p" />
+                    <Button style = "margin-left: 15px;" label="10 min"/>
+                </div>
+            </template>
+        </Card>
+        
     </main>
 </template>
 
@@ -34,7 +78,11 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .mahWheel{
     position: absolute;
+<<<<<<< HEAD
     left: -30vh;
+=======
+    left: -40vh;
+>>>>>>> 387b123704fae134584d967e0eed4a0c21e7b33e
     top: 9vh;
 }
 
@@ -44,9 +92,30 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .title{
     font-family: 'Press Start 2P', sans-serif;
+<<<<<<< HEAD
     font-size: 7vh;
     margin: -40vh 20vw 0 20vw;
     color: #F9ED69;
+=======
+    font-size: 3vh;
+    margin: 0vh 20vw 0 20vw;
+    align-items: center;
+>>>>>>> 387b123704fae134584d967e0eed4a0c21e7b33e
 }
+
+.card {
+    font-size: 100%;
+    align-items: center;
+    margin: 5vh 0 15vh 25vw;
+}
+
+.header {
+    font-size: 200%;
+    text-align: center;
+    padding-bottom: 10vh;
+    font-family: 'Press Start 2P', sans-serif;
+    background-color: aqua;
+}
+
 
 </style>
