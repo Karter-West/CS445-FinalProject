@@ -34,7 +34,7 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .mahWheel{
     position: absolute;
-    left: -25vh;
+    left: -30vh;
     top: 9vh;
 }
 
@@ -46,6 +46,7 @@ const toGameplay = () => {router.push('/gameplay')}
     font-family: 'Press Start 2P', sans-serif;
     font-size: 7vh;
     margin: -40vh 20vw 0 20vw;
+    color: #F9ED69;
 }
 
 </style>

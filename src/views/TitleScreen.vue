@@ -28,7 +28,8 @@ const toGamesScreen = () => {router.push('/games')}
 
 .title{
     font-family: 'Press Start 2P', sans-serif;
-    font-size: 100px;
+    font-size: 14vh;
+    color: #F9ED69;
     margin: auto;
 }
 </style>
