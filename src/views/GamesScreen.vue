@@ -78,11 +78,7 @@ onBeforeUnmount(() => {
 
 .mahWheel{
     position: absolute;
-<<<<<<< HEAD
-    left: -30vh;
-=======
     left: -40vh;
->>>>>>> 387b123704fae134584d967e0eed4a0c21e7b33e
     top: 9vh;
 }
 
@@ -92,21 +88,15 @@ onBeforeUnmount(() => {
 
 .title{
     font-family: 'Press Start 2P', sans-serif;
-<<<<<<< HEAD
-    font-size: 7vh;
-    margin: -40vh 20vw 0 20vw;
-    color: #F9ED69;
-=======
-    font-size: 3vh;
-    margin: 0vh 20vw 0 20vw;
+    font-size: 6vh;
+    margin: 5vh 20vw 0 20vw;
     align-items: center;
->>>>>>> 387b123704fae134584d967e0eed4a0c21e7b33e
 }
 
 .card {
     font-size: 100%;
     align-items: center;
-    margin: 5vh 0 15vh 25vw;
+    margin: 0 0 15vh 40vw;
 }
 
 .header {

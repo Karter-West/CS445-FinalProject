@@ -1,12 +1,9 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
-<<<<<<< HEAD
       <button class="wheelButton" @click="spinWheel" :disabled="isAnimating">
         Spin the Wheel!
       </button>
-=======
->>>>>>> 387b123704fae134584d967e0eed4a0c21e7b33e
     </div>
   </template>
   
@@ -119,7 +116,7 @@
     color: white;
   }
   .wheelButton{
-    margin-left: 15vh;
+    margin-left: 30vh;
   }
 
   </style>
