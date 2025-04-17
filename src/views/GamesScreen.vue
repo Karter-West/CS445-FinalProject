@@ -3,19 +3,32 @@ import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
 import Wheel from './Wheel.vue';
 import Card from 'primevue/card';
-import { onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
 const toTitleScreen = () => {router.push('/')}
 const toGameplay = () => {router.push('/gameplay')}
+const wheelRef = ref(null)
 
 function keyHandler(event){
-    if (event.code === 'Space' && router.currentRoute.value.path === '/games'){
-        toGameplay();
-    }
+    const currentPath = router.currentRoute.value.path
 
-    if (event.code === 'ArrowLeft' && router.currentRoute.value.path === '/games'){
-        toTitleScreen();
+    if (currentPath === '/games'){
+        if (event.code == 'ArrowDown'){
+            wheelRef.value?.spinWheel();
+        }
+
+        if (event.code == 'ArrowUp'){
+            wheelRef.value?.revSpinWheel();
+        }
+
+        if (event.code === 'Space' ){
+            toGameplay();
+        }
+
+        if (event.code === 'ArrowLeft' ){
+            toTitleScreen();
+        }
     }
 
 }
@@ -36,7 +49,7 @@ onBeforeUnmount(() => {
             <h1 class="title">Games Page</h1>
         </div>
         <div class="main">
-            <Wheel class="mahWheel"/>
+            <Wheel class="mahWheel" ref="wheelRef"/>
         </div>
         <Card class = "card" style="width: 25rem; overflow: hidden">
             <template #header>

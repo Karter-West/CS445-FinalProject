@@ -19,10 +19,6 @@
     mounted() {
       this.drawWheel();
 
-      document.addEventListener('keyup', this.keyHandler)
-    },
-    beforeUnmount(){
-      document.addEventListener('keyup', keyHandler)
     },
     methods: {
       drawWheel() {
@@ -97,14 +93,6 @@
         const winningSegmentIndex = Math.floor((360 - (this.currentAngle % 360)) / anglePerSegment);
         alert(`Congratulations! You won ${this.segments[winningSegmentIndex]}`);
       },
-      keyHandler(event){
-        if (event.code === 'ArrowDown'){
-          this.spinWheel();
-        }
-        if (event.code === 'ArrowUp'){
-          this.revSpinWheel();
-        }
-      }
     },
   };
 
