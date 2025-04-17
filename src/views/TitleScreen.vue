@@ -26,7 +26,7 @@ onBeforeUnmount(() => {
     <main class="title-screen">
         <div>
             <h1 class="title">Indy Indies</h1>
-            <h2>Press Any Key To Start</h2>
+            <h2>Press Space To Start</h2>
         </div>
     </main>
 

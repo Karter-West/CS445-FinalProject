@@ -98,6 +98,12 @@ onBeforeUnmount(() => {
     font-size: 100%;
     align-items: center;
     margin: 0 0 15vh 40vw;
+    background-color: #ffffff24; 
+    border: 2px solid #F9ED69;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -105,7 +111,6 @@ onBeforeUnmount(() => {
     text-align: center;
     padding-bottom: 10vh;
     font-family: 'Press Start 2P', sans-serif;
-    background-color: aqua;
 }
 
 
