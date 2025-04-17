@@ -17,6 +17,7 @@ function keyHandler(event){
     if (event.code === 'ArrowLeft' && router.currentRoute.value.path === '/games'){
         toTitleScreen();
     }
+
 }
 
 onMounted(() => {

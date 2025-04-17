@@ -1,9 +1,6 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
-      <button @click="spinWheel" :disabled="isAnimating">
-        Spin the Wheel!
-      </button>
     </div>
   </template>
   
@@ -21,6 +18,11 @@
     },
     mounted() {
       this.drawWheel();
+
+      document.addEventListener('keyup', this.keyHandler)
+    },
+    beforeUnmount(){
+      document.addEventListener('keyup', keyHandler)
     },
     methods: {
       drawWheel() {
@@ -61,6 +63,23 @@
           }
         });
       },
+      revSpinWheel() {
+        if (this.isAnimating) return;
+        
+        this.isAnimating = true;
+
+        const spins = 1;
+        const finalAngle = spins * 60;
+        gsap.to(this, {
+          currentAngle: this.currentAngle - finalAngle,
+          duration: 1,
+          ease: "power4.out",
+          onUpdate: this.updateWheel,
+          onComplete: () => {
+            this.isAnimating = false;
+          }
+        });
+      },
       updateWheel() {
         const canvas = this.$refs.wheelCanvas;
         const ctx = canvas.getContext("2d");
@@ -78,6 +97,14 @@
         const winningSegmentIndex = Math.floor((360 - (this.currentAngle % 360)) / anglePerSegment);
         alert(`Congratulations! You won ${this.segments[winningSegmentIndex]}`);
       },
+      keyHandler(event){
+        if (event.code === 'ArrowDown'){
+          this.spinWheel();
+        }
+        if (event.code === 'ArrowUp'){
+          this.revSpinWheel();
+        }
+      }
     },
   };
 
