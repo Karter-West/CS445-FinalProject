@@ -9,7 +9,9 @@ const toTitleScreen = () => {router.push('/')}
 const toGamesScreen = () => {router.push('/games')}
 
 function keyHandler(event){
-    if (event.code === 'ArrowLeft' && router.currentRoute.value.path === '/gameplay'){
+    const currentPath = router.currentRoute.value.path
+
+    if (event.code === 'ArrowLeft' && currentPath === '/gameplay'){
         toGamesScreen();
     }
 }

@@ -7,7 +7,9 @@ const router = useRouter();
 const toGamesScreen = () => {router.push('/games')}
 
 function toNextScreen(event){
-    if (event.code === 'Space' && router.currentRoute.value.path === '/'){
+    const currentPath = router.currentRoute.value.path
+
+    if (event.code === 'Space' && currentPath === '/'){
         toGamesScreen();
     }
 }

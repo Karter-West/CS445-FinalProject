@@ -22,7 +22,7 @@ function keyHandler(event){
             wheelRef.value?.revSpinWheel();
         }
 
-        if (event.code === 'Space' ){
+        if (event.code === 'Space'){
             toGameplay();
         }
 
