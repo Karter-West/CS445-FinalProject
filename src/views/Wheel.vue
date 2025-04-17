@@ -1,9 +1,6 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
-      <button @click="spinWheel" :disabled="isAnimating">
-        Spin the Wheel!
-      </button>
     </div>
   </template>
   
@@ -21,6 +18,7 @@
     },
     mounted() {
       this.drawWheel();
+
     },
     methods: {
       drawWheel() {
@@ -38,8 +36,8 @@
           ctx.translate(250, 250);
           ctx.rotate((i + 0.5) * anglePerSegment);
           ctx.textAlign = "right";
-          ctx.fillStyle = "#FFFFFF";
-          ctx.font = "20px Arial";
+          ctx.fillStyle = "#F9ED69";
+          ctx.font = "20px 'Press Start 2P'";
           ctx.fillText(this.segments[i], 230, 10);
           ctx.restore();
         }
@@ -58,7 +56,24 @@
           onUpdate: this.updateWheel,
           onComplete: () => {
             this.isAnimating = false;
-          },
+          }
+        });
+      },
+      revSpinWheel() {
+        if (this.isAnimating) return;
+        
+        this.isAnimating = true;
+
+        const spins = 1;
+        const finalAngle = spins * 60;
+        gsap.to(this, {
+          currentAngle: this.currentAngle - finalAngle,
+          duration: 1,
+          ease: "power4.out",
+          onUpdate: this.updateWheel,
+          onComplete: () => {
+            this.isAnimating = false;
+          }
         });
       },
       updateWheel() {
@@ -80,6 +95,8 @@
       },
     },
   };
+
+
   </script>
   
   <style scoped>
@@ -94,6 +111,9 @@
     font-size: 16px;
     background-color: rgba(92, 194, 139, 0.873);
     color: white;
+  }
+  .wheelButton{
+    margin-left: 30vh;
   }
 
   </style>

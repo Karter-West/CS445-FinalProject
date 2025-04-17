@@ -13,6 +13,7 @@ const router = createRouter({
             name: "title",
             component: TitleScreen
         },
+
         {
             path: "/games",
             name: "games",

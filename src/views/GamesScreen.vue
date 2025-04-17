@@ -3,10 +3,44 @@ import {useRouter} from 'vue-router';
 import { Button } from 'primevue';
 import Wheel from './Wheel.vue';
 import Card from 'primevue/card';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
 const toTitleScreen = () => {router.push('/')}
 const toGameplay = () => {router.push('/gameplay')}
+const wheelRef = ref(null)
+
+function keyHandler(event){
+    const currentPath = router.currentRoute.value.path
+
+    if (currentPath === '/games'){
+        if (event.code == 'ArrowDown'){
+            wheelRef.value?.spinWheel();
+        }
+
+        if (event.code == 'ArrowUp'){
+            wheelRef.value?.revSpinWheel();
+        }
+
+        if (event.code === 'Space' ){
+            toGameplay();
+        }
+
+        if (event.code === 'ArrowLeft' ){
+            toTitleScreen();
+        }
+    }
+
+}
+
+onMounted(() => {
+    document.addEventListener('keyup', keyHandler)
+})
+
+onBeforeUnmount(() => {
+    document.addEventListener('keyup', keyHandler)
+})
+
 </script>
 
 <template>
@@ -15,7 +49,7 @@ const toGameplay = () => {router.push('/gameplay')}
             <h1 class="title">Games Page</h1>
         </div>
         <div class="main">
-            <Wheel class="mahWheel"/>
+            <Wheel class="mahWheel" ref="wheelRef"/>
         </div>
         <Card class = "card" style="width: 25rem; overflow: hidden">
             <template #header>
@@ -36,17 +70,7 @@ const toGameplay = () => {router.push('/gameplay')}
                 </div>
             </template>
         </Card>
-        <div>
-            <Button 
-            label="To Title Screen"
-            @click="toTitleScreen"
-            />
-
-            <Button style="margin-left: 15px;" 
-            label="To Gameplay"
-            @click="toGameplay"
-            />
-        </div>
+        
     </main>
 </template>
 
@@ -54,7 +78,7 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .mahWheel{
     position: absolute;
-    left: -25vh;
+    left: -40vh;
     top: 9vh;
 }
 
@@ -64,15 +88,22 @@ const toGameplay = () => {router.push('/gameplay')}
 
 .title{
     font-family: 'Press Start 2P', sans-serif;
-    font-size: 3vh;
-    margin: 0vh 20vw 0 20vw;
+    font-size: 6vh;
+    color: #F9ED69;
+    margin: 5vh 20vw 0 20vw;
     align-items: center;
 }
 
 .card {
     font-size: 100%;
     align-items: center;
-    margin: 5vh 0 15vh 25vw;
+    margin: 0 0 15vh 40vw;
+    background-color: #ffffff24; 
+    border: 2px solid #F9ED69;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {
@@ -81,7 +112,6 @@ const toGameplay = () => {router.push('/gameplay')}
     padding-top: 5vh;
     padding-bottom: 5vh;
     font-family: 'Press Start 2P', sans-serif;
-    background-color: aqua;
 }
 
 
