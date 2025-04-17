@@ -1,9 +1,6 @@
 <template>
     <div class="fortune-wheel">
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
-      <button class="wheelButton" @click="spinWheel" :disabled="isAnimating">
-        Spin the Wheel!
-      </button>
     </div>
   </template>
   
@@ -39,8 +36,8 @@
           ctx.translate(250, 250);
           ctx.rotate((i + 0.5) * anglePerSegment);
           ctx.textAlign = "right";
-          ctx.fillStyle = "#FFFFFF";
-          ctx.font = "20px Arial";
+          ctx.fillStyle = "#F9ED69";
+          ctx.font = "20px 'Press Start 2P'";
           ctx.fillText(this.segments[i], 230, 10);
           ctx.restore();
         }

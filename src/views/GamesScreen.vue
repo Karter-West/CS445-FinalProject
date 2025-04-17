@@ -89,6 +89,7 @@ onBeforeUnmount(() => {
 .title{
     font-family: 'Press Start 2P', sans-serif;
     font-size: 6vh;
+    color: #F9ED69;
     margin: 5vh 20vw 0 20vw;
     align-items: center;
 }
