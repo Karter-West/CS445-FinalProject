@@ -28,13 +28,6 @@ onBeforeUnmount(() => {
             <h1 class="title">Indy Indies</h1>
             <h2>Press Any Key To Start</h2>
         </div>
-
-        <div>
-            <Button 
-            label="To Games Screen"
-            @click="toGamesScreen"
-            />
-        </div>
     </main>
 
 

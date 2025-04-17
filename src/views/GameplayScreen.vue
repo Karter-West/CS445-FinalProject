@@ -60,14 +60,7 @@ onBeforeUnmount(() => {
         <div class="startContainer">
             <h2>Press any button to start.</h2>
         </div>
-        
-        
-        <div>
-            <Button class = "button"
-            label="To Title Screen"
-            @click="toTitleScreen"
-            />
-        </div>
+    
     </main>
 </template>
 
