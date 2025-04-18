@@ -73,6 +73,11 @@ onBeforeUnmount(() => {
                 </div>
             </template>
         </Card>
+        <div class="button-container">
+            <Button class = "space">[space] = select</Button>
+            <Button icon="pi pi-chevron-up" label = "= roll up" class = "up"></Button>
+            <Button icon="pi pi-chevron-down" label = "= roll down" class = "down"></Button>
+        </div>
         
     </main>
 </template>
@@ -116,6 +121,14 @@ onBeforeUnmount(() => {
     padding-bottom: 5vh;
     font-family: 'Press Start 2P', sans-serif;
 }
-
+.button-container {
+    margin-left: -65vw;
+    margin-top: -10vh;
+}
+.space, .up, .down {
+    background-color: #ffffff24; 
+    border: 2px solid #F9ED69;
+    margin-left: 15px;
+}
 
 </style>
