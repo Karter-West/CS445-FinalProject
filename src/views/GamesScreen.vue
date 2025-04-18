@@ -154,11 +154,17 @@ onBeforeUnmount(() => {
 .button-container {
     margin-left: -65vw;
     margin-top: -10vh;
+    
 }
 .space, .up, .down {
     background-color: #ffffff24; 
     border: 2px solid #F9ED69;
     margin-left: 15px;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 0.55rem;
+}
+.space {
+    padding: 0.7rem 1.5rem;
 }
 
 .footer {
