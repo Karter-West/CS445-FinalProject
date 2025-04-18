@@ -3,7 +3,7 @@
       <canvas ref="wheelCanvas" width="500" height="500" ></canvas>
       <i class="pi pi-sort-down-fill"></i>
     </div>
-  </template>
+</template>
   
   <script>
   import { gsap } from "gsap";
@@ -18,8 +18,7 @@
       };
     },
     mounted() {
-      this.drawWheel();
-
+      this.updateWheel();
     },
     methods: {
       drawWheel() {
@@ -104,16 +103,6 @@
   .fortune-wheel {
     display: flex;
     align-items: center;
-  }
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: rgba(92, 194, 139, 0.873);
-    color: white;
-  }
-  .wheelButton{
-    margin-left: 30vh;
   }
 
   .pi-sort-down-fill {

@@ -1,6 +1,5 @@
 <script setup>
 import {useRouter} from 'vue-router';
-import { Button } from 'primevue';
 import { onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
@@ -10,6 +9,10 @@ function toNextScreen(event){
     const currentPath = router.currentRoute.value.path
 
     if (event.code === 'Space' && currentPath === '/'){
+        toGamesScreen();
+    }
+
+    if (event.code === 'ArrowRight' && currentPath === '/'){
         toGamesScreen();
     }
 }
@@ -28,7 +31,7 @@ onBeforeUnmount(() => {
     <main class="title-screen">
         <div>
             <h1 class="title">Indy Indies</h1>
-            <h2>Press Space To Start</h2>
+            <h2>Press Space or ">" To Start</h2>
         </div>
     </main>
 
