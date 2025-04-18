@@ -68,6 +68,9 @@ onBeforeUnmount(() => {
                     Game description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
                     quas!
                 </p>
+                <p>
+                    Want to learn more about the developer? Follow this link! https://example.org 
+                </p>
             </template>
             <template #footer>
                 <div class="footer">
