@@ -1,11 +1,9 @@
 <script setup>
 import {useRouter} from 'vue-router';
-import { Button } from 'primevue';
 import Card from 'primevue/card';
 import { onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
-const toTitleScreen = () => {router.push('/')}
 const toGamesScreen = () => {router.push('/games')}
 
 function keyHandler(event){
@@ -21,7 +19,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-    document.addEventListener('keyup', keyHandler)
+    document.removeEventListener('keyup', keyHandler)
 })
 
 </script>

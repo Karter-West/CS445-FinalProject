@@ -1,6 +1,5 @@
 <script setup>
 import {useRouter} from 'vue-router';
-import { Button } from 'primevue';
 import { onMounted, onBeforeUnmount } from 'vue';
 
 const router = useRouter();
