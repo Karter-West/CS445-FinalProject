@@ -56,17 +56,20 @@ onBeforeUnmount(() => {
                 <div class = "header"> gameplay </div>
             </template>
             <template #title>Game Title</template>
-            <template #subtitle>Author: Jane Doe</template>
+            <template #subtitle>Developer: Jane Doe</template>
             <template #content>
                 <p class="m-0">
                     Game description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
                     quas!
                 </p>
+                <p>
+                    Want to learn more about the developer? Follow this link! https://example.org 
+                </p>
             </template>
             <template #footer>
                 <div class="flex gap-4 mt-1">
-                    <Button label="2 p" />
-                    <Button style = "margin-left: 15px;" label="10 min"/>
+                    <Button style = "background-color: #F08A5D; border-color: yellow;" label="2 p" />
+                    <Button style = "margin-left: 15px; background-color: #F08A5D; border-color: yellow;" label="10 min"/>
                 </div>
             </template>
         </Card>
