@@ -153,7 +153,7 @@ onBeforeUnmount(() => {
 }
 .button-container {
     margin-left: -65vw;
-    margin-top: -10vh;
+    margin-top: -12vh;
     
 }
 .space, .up, .down {
