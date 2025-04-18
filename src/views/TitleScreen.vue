@@ -12,6 +12,10 @@ function toNextScreen(event){
     if (event.code === 'Space' && currentPath === '/'){
         toGamesScreen();
     }
+
+    if (event.code === 'ArrowRight' && currentPath === '/'){
+        toGamesScreen();
+    }
 }
 
 onMounted(() => {
@@ -28,7 +32,7 @@ onBeforeUnmount(() => {
     <main class="title-screen">
         <div>
             <h1 class="title">Indy Indies</h1>
-            <h2>Press Space To Start</h2>
+            <h2>Press Space or ">" To Start</h2>
         </div>
     </main>
 

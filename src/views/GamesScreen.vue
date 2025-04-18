@@ -22,7 +22,7 @@ function keyHandler(event){
             wheelRef.value?.revSpinWheel();
         }
 
-        if (event.code === 'Space'){
+        if (event.code === 'Space' || event.code === 'ArrowRight'){
             toGameplay();
         }
 
@@ -51,12 +51,18 @@ onBeforeUnmount(() => {
         <div class="main">
             <Wheel class="mahWheel" ref="wheelRef"/>
         </div>
-        <Card class = "card" style="width: 40rem; overflow: hidden">
+        <Card class = "card" style="width: 60vw; height: 75vh; overflow: hidden">
             <template #header>
-                <div class = "header"> gameplay </div>
+                <div class = "header"> Gameplay </div>
             </template>
-            <template #title>Game Title</template>
-            <template #subtitle>Author: Jane Doe</template>
+
+            <template #title>
+                <h4 class="card-title">Game Title</h4>
+            </template>
+
+            <template #subtitle>
+                <h4 class="card-title">Author: John Doe</h4>
+            </template>
             <template #content>
                 <p class="m-0">
                     Game description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
@@ -64,9 +70,9 @@ onBeforeUnmount(() => {
                 </p>
             </template>
             <template #footer>
-                <div class="flex gap-4 mt-1">
-                    <Button label="2 p" />
-                    <Button style = "margin-left: 15px;" label="10 min"/>
+                <div class="footer">
+                    <div class="footer-text">2 Players</div>
+                    <div class="footer-text">30 min</div>
                 </div>
             </template>
         </Card>
@@ -79,7 +85,7 @@ onBeforeUnmount(() => {
 .mahWheel{
     position: absolute;
     left: -35vh;
-    top: 9vh;
+    top: 10vh;
 }
 
 .main{
@@ -96,7 +102,6 @@ onBeforeUnmount(() => {
 
 .card {
     font-size: 100%;
-    align-items: center;
     margin: 0 0 15vh 30vw;
     background-color: #ffffff24; 
     border: 2px solid #F9ED69;
@@ -110,9 +115,34 @@ onBeforeUnmount(() => {
     font-size: 200%;
     text-align: center;
     padding-top: 5vh;
-    padding-bottom: 5vh;
+    padding-bottom: 1vh;
     font-family: 'Press Start 2P', sans-serif;
 }
 
+.m-0 {
+    font-size: smaller;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.card-title{
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.footer {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.footer-text{
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: 'Press Start 2P', sans-serif;
+    font-size: 0.55rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
 
 </style>
