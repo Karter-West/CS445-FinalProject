@@ -1,5 +1,6 @@
 <script setup>
 import {useRouter} from 'vue-router';
+import Button from "primevue/button";
 import Wheel from './Wheel.vue';
 import Card from 'primevue/card';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
