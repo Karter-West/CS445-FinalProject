@@ -1,6 +1,5 @@
 <script setup>
 import {useRouter} from 'vue-router';
-import { Button } from 'primevue';
 import Wheel from './Wheel.vue';
 import Card from 'primevue/card';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
@@ -45,8 +44,9 @@ onBeforeUnmount(() => {
 
 <template>
     <main>
-        <div>
-            <h1 class="title">Games Page</h1>
+        <div class="title">
+            <h1 class="title-text">Games Page</h1>
+            <p class="controls-text">(Use the arrow keys as your controller)</p>
         </div>
         <div class="main">
             <Wheel class="mahWheel" ref="wheelRef"/>
@@ -67,9 +67,6 @@ onBeforeUnmount(() => {
                 <p class="m-0">
                     Game description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
                     quas!
-                </p>
-                <p>
-                    Want to learn more about the developer? Follow this link! https://example.org 
                 </p>
             </template>
             <template #footer>
@@ -96,12 +93,30 @@ onBeforeUnmount(() => {
 }
 
 .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-text{
     font-family: 'Press Start 2P', sans-serif;
     font-size: 6vh;
     color: #F9ED69;
-    margin: 5vh 20vw 0 20vw;
-    align-items: center;
+    margin-top: 3rem;
+    margin-bottom: 0;
+    padding: 0;
+    line-height: 0;
 }
+
+.controls-text{
+    font-size: .6rem;
+    font-family: 'Press Start 2P', sans-serif;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    line-height: 0;
+}
+
 
 .card {
     font-size: 100%;
