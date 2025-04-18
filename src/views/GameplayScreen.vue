@@ -31,7 +31,7 @@ onBeforeUnmount(() => {
                 <h1>Game Title</h1>
             </div>
             <div class="authorContainer">
-                <h2>Made by: Author</h2>
+                <h2>Made by Developer</h2>
             </div>
             <div class="descriptContainer">
                 <h2>
@@ -45,7 +45,7 @@ onBeforeUnmount(() => {
         <div class="logoContainer">
             <Card class = "custom-card">
                 <template #content>
-                    <h2>logo here</h2>
+                    <h2>Logo here</h2>
                 </template>
             </Card>
         </div>
@@ -53,7 +53,7 @@ onBeforeUnmount(() => {
         <div class="gameplayContainer">
             <Card class = "custom-card2">
                 <template #content>
-                    <h2>game play goes here</h2>
+                    <h2>Gameplay goes here</h2>
                 </template>
             </Card>
         </div>
@@ -109,7 +109,7 @@ onBeforeUnmount(() => {
     }
     .authorContainer h2{
         font-size: 1.25rem;
-        color: #F9ED69;
+        color: #f5f5f5;
         margin-bottom: 20px;
     }
     .logoContainer h2{

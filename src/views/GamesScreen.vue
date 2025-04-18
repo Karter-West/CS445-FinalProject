@@ -61,7 +61,7 @@ onBeforeUnmount(() => {
             </template>
 
             <template #subtitle>
-                <h4 class="card-title">Author: John Doe</h4>
+                <h4 class="card-title">Developer: John Doe</h4>
             </template>
             <template #content>
                 <p class="m-0">
